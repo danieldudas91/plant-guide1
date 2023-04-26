@@ -27,7 +27,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     public LinkedList<String> createAndFillList(){
         LinkedList<String> list = new LinkedList<>();
         for (int i = 0; i < 10; i++) {
-            list.add("Element" + i);
+            list.addLast("Element" + i);
         }
         return list;
     }
