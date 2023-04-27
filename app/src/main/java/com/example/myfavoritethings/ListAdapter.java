@@ -21,6 +21,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.WordViewHolder
         this.list = list;
     }
 
+    public void setList(LinkedList<String> list) {
+        this.list = list;
+    }
+
     @NonNull
     @Override
     public WordViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
