@@ -14,7 +14,7 @@ import java.util.List;
 public interface PlantDao {
 
     @Query("SELECT * FROM plants")
-    LiveData<List<Plant>> getAllDestinations();
+    LiveData<List<Plant>> getAllPlants();
 
     @Query("DELETE FROM plants")
     void deleteAll();
@@ -22,8 +22,8 @@ public interface PlantDao {
     @Query("DELETE FROM plants WHERE id = :id")
     void deleteById(int id);
 
-    @Query("UPDATE plants SET name = :name, description = :description, picture_url = :imageUrl WHERE id = :id ")
-    void updateDestination(String name, String description, String imageUrl, int id);
+    @Query("UPDATE plants SET name = :name, scientific_name = :scientificName,  description = :description, picture_url = :imageUrl WHERE id = :id ")
+    void updatePlant(String name, String scientificName, String description, String imageUrl, int id);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Plant plant);
