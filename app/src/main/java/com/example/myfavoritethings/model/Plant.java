@@ -16,9 +16,9 @@ public class Plant {
     private String pictureUrl;
     private String description;
 
-    public Plant(String name, String scientificName1, String pictureUrl, String description) {
+    public Plant(String name, String scientificName, String pictureUrl, String description) {
         this.name = name;
-        this.scientificName = scientificName1;
+        this.scientificName = scientificName;
         this.pictureUrl = pictureUrl;
         this.description = description;
     }
