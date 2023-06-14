@@ -8,4 +8,9 @@
     <string name="edit_destination">Edit destination</string>
     <string name="save">Save</string>
     <string name="save_changes">Save changes</string>
+    <string name="enter_plant_name">Enter plant name</string>
+    <string name="enter_scientific_name">Enter scientific name</string>
+    <string name="picture_url">Picture url</string>
+    <string name="add_plant">Add plant</string>
+    <string name="add_new_plant">Add new plant</string>
 </resources>

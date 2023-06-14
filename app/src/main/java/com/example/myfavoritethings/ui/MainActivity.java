@@ -1,6 +1,9 @@
 package com.example.myfavoritethings.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,5 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 .get(PlantViewModel.class);
         viewModel.getAllPlants()
                 .observe(this, adapter::submitList);
+    }
+
+    public void onClick(View view){
+        Intent intent = new Intent(this, AddPlant.class);
+        startActivity(intent);
     }
 }

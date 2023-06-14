@@ -25,7 +25,7 @@
         app:backgroundTint="@color/white"
         android:layout_margin="16dp"
         android:contentDescription="@string/add"
-        android:onClick="addNewDestination"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="UsingOnClickInXml"
