@@ -15,6 +15,8 @@ public class Plant {
     @ColumnInfo(name = "picture_url")
     private String pictureUrl;
     private String description;
+    @ColumnInfo(name = "geographic_region")
+    private GeographicRegion region;
 
     public Plant(String name, String scientificName, String pictureUrl, String description) {
         this.name = name;
