@@ -65,4 +65,12 @@ public class Plant {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public GeographicRegion getRegion() {
+        return region;
+    }
+
+    public void setRegion(GeographicRegion region) {
+        this.region = region;
+    }
 }
