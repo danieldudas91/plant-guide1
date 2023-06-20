@@ -18,11 +18,12 @@ public class Plant {
     @ColumnInfo(name = "geographic_region")
     private GeographicRegion region;
 
-    public Plant(String name, String scientificName, String pictureUrl, String description) {
+    public Plant(String name, String scientificName, String pictureUrl, String description, GeographicRegion region) {
         this.name = name;
         this.scientificName = scientificName;
         this.pictureUrl = pictureUrl;
         this.description = description;
+        this.region = region;
     }
 
     public int getId() {
