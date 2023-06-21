@@ -29,6 +29,7 @@ public abstract class PlantDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(
                                     context, PlantDatabase.class, "plant_database")
                             .addCallback(populateDatabase)
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
