@@ -13,7 +13,7 @@ import com.example.myfavoritethings.model.Plant;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-@Database(entities = {Plant.class}, version = 1, exportSchema = false)
+@Database(entities = {Plant.class}, version = 2, exportSchema = false)
 public abstract class PlantDatabase extends RoomDatabase {
 
     public abstract PlantDao plantDao();
