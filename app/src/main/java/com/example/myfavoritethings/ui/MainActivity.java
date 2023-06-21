@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 .get(PlantViewModel.class);
         viewModel.getAllPlants()
                 .observe(this, adapter::submitList);
+        setRegionSpinnerElements(this, sortByDropdown);
     }
 
     public static void setRegionSpinnerElements(Context context, Spinner dropDown){
