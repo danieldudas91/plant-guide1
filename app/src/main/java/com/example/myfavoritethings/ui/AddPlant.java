@@ -38,16 +38,10 @@ public class AddPlant extends AppCompatActivity {
         pictureUrlInput = findViewById(R.id.image_input);
         regionDropdown = findViewById(R.id.region_spinner);
         viewModel = new PlantViewModel(getApplication());
-        setSpinnerElements();
+        MainActivity.setRegionSpinnerElements(this, regionDropdown);
     }
 
-    public void setSpinnerElements(){
-        ArrayAdapter<GeographicRegion> dropdownAdapter =
-                new ArrayAdapter<GeographicRegion>(this,
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                GeographicRegion.values());
-        regionDropdown.setAdapter(dropdownAdapter);
-    }
+
 
     public void addNewPlant(View view){
         String name = nameInput.getText().toString();
