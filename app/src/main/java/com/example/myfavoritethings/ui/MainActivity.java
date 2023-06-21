@@ -22,13 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
     private PlantViewModel viewModel;
     private RecyclerView recyclerView;
+    private Spinner sortByDropdown;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerview);
+        sortByDropdown = findViewById(R.id.sort_by_region);
         PlantListAdapter adapter = new PlantListAdapter(new PlantListAdapter.PlantDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
