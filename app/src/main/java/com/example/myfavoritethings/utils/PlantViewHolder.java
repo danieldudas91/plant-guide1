@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 
 public class PlantViewHolder extends RecyclerView.ViewHolder {
     private final TextView name;
-    private final TextView description;
+    private final TextView scientificName;
     private final ImageView imageView;
     private PlantOnClickListener onclickListener;
 
@@ -21,7 +21,7 @@ public class PlantViewHolder extends RecyclerView.ViewHolder {
     public PlantViewHolder(@NonNull View itemView) {
         super(itemView);
         this.name = itemView.findViewById(R.id.name);
-        this.description = itemView.findViewById(R.id.description);
+        this.scientificName = itemView.findViewById(R.id.description);
         this.imageView = itemView.findViewById(R.id.imageView);
         this.onclickListener = new PlantOnClickListener();
         itemView.setOnClickListener(onclickListener);
@@ -32,7 +32,7 @@ public class PlantViewHolder extends RecyclerView.ViewHolder {
             imageUrl = "https://www.creativefreedom.co.uk/wp-content/uploads/2013/03/00-android-4-0_icons.png";
         }
         this.name.setText(name);
-        this.description.setText(description);
+        this.scientificName.setText(scientificName);
         loadImage(imageUrl);
         onclickListener.setScientificName(scientificName);
         onclickListener.setDescription(description);
