@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         viewModel = new ViewModelProvider(this)
                 .get(PlantViewModel.class);
-        viewModel.getAllPlants()
-                .observe(this, adapter::submitList);
-        setRegionSpinnerElements(this, sortByDropdown);
+        item.observe(this, value ->
+                viewModel.getPlantsByRegion(value)
+                .observe(this, adapter::submitList));
     }
 
     public static void setRegionSpinnerElements(Context context, Spinner dropDown){
