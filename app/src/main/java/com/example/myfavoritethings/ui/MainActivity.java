@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private PlantViewModel viewModel;
     private RecyclerView recyclerView;
     private Spinner sortByDropdown;
+    private MutableLiveData<GeographicRegion> item;
 
 
     @SuppressLint("MissingInflatedId")
