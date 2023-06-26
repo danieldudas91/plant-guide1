@@ -20,12 +20,16 @@ import com.example.myfavoritethings.model.GeographicRegion;
 import com.example.myfavoritethings.viewmodel.PlantViewModel;
 import com.example.tripplanner.utils.PlantListAdapter;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private PlantViewModel viewModel;
     private RecyclerView recyclerView;
     private Spinner sortByDropdown;
-    private MutableLiveData<GeographicRegion> item;
+    private MutableLiveData<String> item;
 
 
     @SuppressLint("MissingInflatedId")
@@ -44,15 +48,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         viewModel = new ViewModelProvider(this)
                 .get(PlantViewModel.class);
         item.observe(this, value ->
-                viewModel.getPlantsByRegion(value)
+                viewModel.getPlantsByRegion(GeographicRegion.getRegionByLabel(value))
                 .observe(this, adapter::submitList));
     }
 
-    public static void setRegionSpinnerElements(Context context, Spinner dropDown){
-        ArrayAdapter<GeographicRegion> dropdownAdapter =
-                new ArrayAdapter<GeographicRegion>(context,
+    public static void setRegionSpinnerElements(Context context, Spinner dropDown) {
+        List<String> regionLabels = Arrays.stream(GeographicRegion.values())
+                .map(GeographicRegion::getLabel)
+                .collect(Collectors.toList());
+        ArrayAdapter<String> dropdownAdapter =
+                new ArrayAdapter<>(context,
                         androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                        GeographicRegion.values());
+                        regionLabels);
         dropDown.setAdapter(dropdownAdapter);
     }
 
@@ -63,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        item.setValue((GeographicRegion) adapterView.getSelectedItem());
+        item.setValue((String) adapterView.getSelectedItem());
     }
 
     @Override
