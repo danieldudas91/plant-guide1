@@ -26,4 +26,8 @@ public enum GeographicRegion {
     public String getLabel() {
         return label;
     }
+
+    public static GeographicRegion getRegionByLabel(String label) {
+        return lookup.get(label);
+    }
 }
