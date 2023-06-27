@@ -1,6 +1,8 @@
 package com.example.myfavoritethings.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public enum GeographicRegion {
@@ -29,5 +31,8 @@ public enum GeographicRegion {
 
     public static GeographicRegion getRegionByLabel(String label) {
         return lookup.get(label);
+    }
+    public static List<String> getAllLabels() {
+        return new ArrayList<>(lookup.keySet());
     }
 }
