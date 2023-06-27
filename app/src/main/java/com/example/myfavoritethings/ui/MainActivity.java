@@ -8,21 +8,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.myfavoritethings.R;
 import com.example.myfavoritethings.model.GeographicRegion;
 import com.example.myfavoritethings.viewmodel.PlantViewModel;
 import com.example.tripplanner.utils.PlantListAdapter;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -53,13 +47,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public static void setRegionSpinnerElements(Context context, Spinner dropDown) {
-        List<String> regionLabels = Arrays.stream(GeographicRegion.values())
-                .map(GeographicRegion::getLabel)
-                .collect(Collectors.toList());
         ArrayAdapter<String> dropdownAdapter =
                 new ArrayAdapter<>(context,
                         androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                        regionLabels);
+                        GeographicRegion.getAllLabels());
         dropDown.setAdapter(dropdownAdapter);
     }
 
