@@ -47,4 +47,3 @@ Android Studio
     Select the directory and select the file build.gradle in the cloned repo.
     Click 'OK' to open the project in Android Studio.
     A Gradle sync should start, but you can force a sync and build the 'app' module as needed.
-
