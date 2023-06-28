@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import com.example.myfavoritethings.data.repository.PlantRepository;
+import com.example.myfavoritethings.model.GeographicRegion;
 import com.example.myfavoritethings.model.Plant;
 import java.util.List;
 
@@ -21,6 +22,10 @@ public class PlantViewModel extends AndroidViewModel {
 
     public LiveData<List<Plant>> getAllPlants() {
         return allPlants;
+    }
+
+    public LiveData<List<Plant>> getPlantsByRegion(GeographicRegion region) {
+        return plantRepository.getPlantsByRegion(region);
     }
 
     public void insert(Plant plant){

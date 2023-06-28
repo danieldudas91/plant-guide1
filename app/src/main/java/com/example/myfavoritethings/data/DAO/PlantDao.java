@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
+import com.example.myfavoritethings.model.GeographicRegion;
 import com.example.myfavoritethings.model.Plant;
 
 import java.util.List;
@@ -15,6 +16,9 @@ public interface PlantDao {
 
     @Query("SELECT * FROM plants")
     LiveData<List<Plant>> getAllPlants();
+
+    @Query("SELECT * FROM plants WHERE geographic_region = :region")
+    LiveData<List<Plant>> getPlantsByRegion(GeographicRegion region);
 
     @Query("DELETE FROM plants")
     void deleteAll();
