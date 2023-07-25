@@ -14,4 +14,6 @@
     <string name="add_plant">Add plant</string>
     <string name="add_new_plant">Add new plant</string>
     <string name="sort_by">Region:</string>
+    <string name="select_geographic_region">Select Geographic Region</string>
+    <string name="you_must_fill_all_fields">You must fill all fields</string>
 </resources>
