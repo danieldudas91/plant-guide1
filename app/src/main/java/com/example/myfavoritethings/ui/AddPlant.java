@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -48,14 +47,15 @@ public class AddPlant extends AppCompatActivity {
         String description = descriptionInput.getText().toString();
         String scientificName = scientificNameInput.getText().toString();
         String pictureUrl = pictureUrlInput.getText().toString();
-        GeographicRegion region = GeographicRegion.valueOf(regionDropdown.getSelectedItem().toString());
+        String dropdownSelectedValue = regionDropdown.getSelectedItem().toString();
         Context context = getApplicationContext();
         int toastLength = Toast.LENGTH_LONG;
-        if(name.equals("") || description.equals("") || scientificName.equals("")){
-            Toast toast = Toast.makeText(context, "You must enter a plant name, scientific name and description!", toastLength);
+        if(name.equals("") || description.equals("") || scientificName.equals("") || dropdownSelectedValue.equals(R.string.select_geographic_region) ){
+            Toast toast = Toast.makeText(context, R.string.you_must_fill_all_fields, toastLength);
             toast.show();
         }
         else {
+            GeographicRegion region = GeographicRegion.valueOf(dropdownSelectedValue);
             Intent intent = new Intent(this, MainActivity.class);
             viewModel.insert(new Plant(name, scientificName, pictureUrl, description, region));
             startActivity(intent);
