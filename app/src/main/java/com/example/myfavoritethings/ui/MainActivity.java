@@ -17,6 +17,7 @@ import com.example.myfavoritethings.R;
 import com.example.myfavoritethings.model.GeographicRegion;
 import com.example.myfavoritethings.viewmodel.PlantViewModel;
 import com.example.tripplanner.utils.PlantListAdapter;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -47,10 +48,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public static void setRegionSpinnerElements(Context context, Spinner dropDown) {
+        List<String> labels = GeographicRegion.getAllLabels();
+        labels.add(0, context.getString(R.string.select_geographic_region));
         ArrayAdapter<String> dropdownAdapter =
                 new ArrayAdapter<>(context,
                         androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                        GeographicRegion.getAllLabels());
+                        labels);
         dropDown.setAdapter(dropdownAdapter);
     }
 
@@ -66,6 +69,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-        System.out.println("nothing selected");
     }
 }
