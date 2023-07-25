@@ -27,8 +27,9 @@
         android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="@color/white"
         tools:ignore="UsingOnClickInXml"
-        tools:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add" />
 
     <TextView
         android:id="@+id/sort_by_text"
