@@ -10,8 +10,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="68dp"
-        android:layout_height="68dp"
-        android:background="@drawable/rounded_picture"/>
+        android:layout_height="68dp" />
 
     <TextView
         android:id="@+id/name"

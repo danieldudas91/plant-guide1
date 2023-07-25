@@ -52,6 +52,7 @@ public class PlantViewHolder extends RecyclerView.ViewHolder {
                 .load(imageUrl)
                 .resize(48, 48)
                 .centerCrop()
+                .transform(new CircleTransform())
                 .into(imageView);
     }
 
