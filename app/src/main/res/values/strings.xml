@@ -16,4 +16,5 @@
     <string name="sort_by">Region:</string>
     <string name="select_geographic_region">Select Geographic Region</string>
     <string name="you_must_fill_all_fields">You must fill all fields</string>
+    <string name="list_your_favorite_plants">List your favorite plants</string>
 </resources>
